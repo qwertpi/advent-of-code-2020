@@ -1,8 +1,11 @@
-import math.floor
+import math.{pow, floor}
 import io.Source.fromFile
 import io.StdIn.readLine
+import java.lang.management.ManagementFactory
 
-object a extends App {
+object both extends App {
+    val timer = ManagementFactory.getThreadMXBean()
+    val start = timer.getCurrentThreadCpuTime()
     def generate_pos(old_pos: Array[Int]): Array[Int] ={
         var pos: Array[Int] = old_pos
         var prev_el: Int = 0
@@ -39,4 +42,6 @@ object a extends App {
         }
     }
     println(product(selected_lines))
+    val end = timer.getCurrentThreadCpuTime()
+    println(s"Took: ${end-start} nanoseconds, that's ${(end-start)/pow(10,9)} seconds")
 }
