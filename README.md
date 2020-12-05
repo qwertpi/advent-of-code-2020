@@ -1,7 +1,7 @@
 # advent-of-code-2020
-My solutions to the [2020 advent of code](adventofcode.com/2019) in Scala
+My solutions to the [2020 advent of code](adventofcode.com/2019) in Scala, predominantly written in a functional programming style
 
-| Challenge      | Program executin time (seconds to 3 sig figs) |
+| Challenge      | Program execution time (seconds to 3 sig figs) |
 | ----------- | ----------- |
 |1A|0.130|
 |1B|7.90|
