@@ -8,5 +8,5 @@ My solutions to the [2020 advent of code](adventofcode.com/2019) in Scala, predo
 |2A|0.0630|
 |2B|0.0690|
 |3A|0.0164|
-|3B|0.0219|
+|3B|0.0204|
 
