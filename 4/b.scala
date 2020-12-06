@@ -4,7 +4,7 @@ import math.pow
 import java.lang.{Integer, NumberFormatException}
 
 object b extends App {
-	val timer = ManagementFactory.getThreadMXBean()
+    val timer = ManagementFactory.getThreadMXBean()
     val start = timer.getCurrentThreadCpuTime()
 
     class Passport(details: Array[String]) {

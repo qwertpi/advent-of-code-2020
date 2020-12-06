@@ -3,7 +3,7 @@ import java.lang.management.ManagementFactory
 import math.pow
 
 object a extends App {
-	val timer = ManagementFactory.getThreadMXBean()
+    val timer = ManagementFactory.getThreadMXBean()
     val start = timer.getCurrentThreadCpuTime()
 	def check_password(condition: String, password: String): Boolean ={
         val split_condition: Array[String] = condition.split("-")

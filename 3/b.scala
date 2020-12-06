@@ -10,7 +10,7 @@ object b extends App {
             return amount * i
     }
 
-	val timer = ManagementFactory.getThreadMXBean()
+    val timer = ManagementFactory.getThreadMXBean()
     val start = timer.getCurrentThreadCpuTime()
     val input: Array[Array[Char]] = fromFile("input.txt").getLines.map(x => x.toString.toCharArray()).toArray
 
