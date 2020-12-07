@@ -11,3 +11,6 @@ My solutions to the [2020 advent of code](adventofcode.com/2019) in Scala, predo
 |3B|0.0204|
 |4A|0.0511|
 |4B|0.0565|
+|5A|0.0199|
+|5B|0.0478|
+
