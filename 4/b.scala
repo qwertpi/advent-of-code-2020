@@ -55,8 +55,7 @@ object b extends App {
         def basic_check(p: Passport): Boolean ={
             return (p.num_fields == 8)||((p.num_fields == 7) && (p.country_id == ""))
         }
-
-        if (basic_check(passport)) return ((passport.birth_year >= 1920) && (passport.birth_year <= 2002) && (passport.issue_year >= 2010) && (passport.issue_year <= 2020) && (passport.expiration_year >= 2020) && (passport.expiration_year <= 2030) && check_height(passport.height) && check_hair(passport.hair_colour) && (passport.hair_colour(0) == '#') && ("amb", "blu", "brn", "gry", "grn", "hzl", "oth").productIterator.toList.contains(passport.eye_color) && (passport.passport_id.length == 9) && check_passport_id(passport.passport_id)) else return false
+        if (basic_check(passport)) return  ((1920 to 2002).contains(passport.birth_year) && (2010 to 2020).contains(passport.issue_year) && (2020 to 2030).contains(passport.expiration_year) && check_height(passport.height) && check_hair(passport.hair_colour) && (passport.hair_colour(0) == '#') && ("amb", "blu", "brn", "gry", "grn", "hzl", "oth").productIterator.toList.contains(passport.eye_color) && (passport.passport_id.length == 9) && check_passport_id(passport.passport_id)) else return false
     }
 
     // two newline characters in a row signify the start of a new passport/
