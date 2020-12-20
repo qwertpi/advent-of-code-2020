@@ -1,15 +1,15 @@
-import io.Source.fromFile
-import java.lang.management.ManagementFactory
 import collection.mutable.LinkedHashSet
-
+import io.Source.fromFile
 import math.pow
+
+import java.lang.management.ManagementFactory
+
 
 object b extends App {
     def apply_rules(floor: Array[Array[Char]]): Array[Array[Char]] ={
         def get_occupied(row: Int, column: Int): Array[Boolean] ={
             var occupied: Array[Boolean] = new Array[Boolean](8).map(_ => false)
 
-            
             val look_right: LinkedHashSet[Int] = LinkedHashSet((1 until (floor_width - column)): _*)
             val look_left: LinkedHashSet[Int] = LinkedHashSet((1 to column): _*)
             val look_down: LinkedHashSet[Int] = LinkedHashSet((1 until (floor_height - row)): _*)
@@ -27,6 +27,7 @@ object b extends App {
             occupied(5) = check(look_down.intersect(look_left).map(n => floor(row + n)(column - n)))
             occupied(6) = check(look_up.intersect(look_right).map(n => floor(row - n)(column + n)))
             occupied(7) = check(look_down.intersect(look_right).map(n => floor(row + n)(column + n)))
+            
             return occupied
         }    
 
