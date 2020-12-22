@@ -31,16 +31,13 @@ object b extends App {
             return occupied
         }    
 
-        var new_floor: Array[Array[Char]] = Array.ofDim[Char](floor_height, floor_width)
+        var new_floor: Array[Array[Char]] = floor.transpose.transpose
         for (row <- (0 until floor_height)) {
             for (column <- (0 until floor_width)) {
                 if (floor(row)(column) != '.') {
                     val adjacent: Array[Boolean] = get_occupied(row, column)
                     new_floor(row)(column) = if (!(adjacent.contains(true))) '#' else if (adjacent.count(_ == true) >= 5) 'L' else floor(row)(column)
                 }
-                else {
-                    new_floor(row)(column) = floor(row)(column)
-                } 
             }
         }
         return new_floor
@@ -81,5 +78,5 @@ object b extends App {
     val end = timer.getCurrentThreadCpuTime()
     println(answer)
 
-	println(s"Took: ${end-start} nanoseconds, that's ${(end-start)/pow(10,9)} seconds")
+    println(s"Took: ${end-start} nanoseconds, that's ${(end-start)/pow(10,9)} seconds")
 }
