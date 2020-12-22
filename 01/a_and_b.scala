@@ -1,4 +1,4 @@
-import math.{pow, floor}
+import math.pow
 import io.Source.fromFile
 import io.StdIn.readLine
 import java.lang.management.ManagementFactory
@@ -18,18 +18,11 @@ object both extends App {
         }
         return pos
     }
-    def product(a: Array[Int]): Int = {
-        var total: Int = 1
-        for (el <- a){
-            total *= el
-        }
-        return total
-    }
     val n: Int = readLine("Enter the value of n to use  ").toInt
     val lines: Array[Int] = fromFile("input.txt").getLines.toArray.map(x => x.toInt)
-    var pos: Array[Int] = Array.tabulate(n)(x => if (x==0) -1 else 0)
-    var selected_lines_indexes: Array[Int] = Array.tabulate(n)(x => 0)
-    var selected_lines: Array[Int] = Array.tabulate(n)(x => 0)
+    var pos: Array[Int] = Array.tabulate(n)(x => if (x == 0) -1 else 0)
+    var selected_lines_indexes: Array[Int] = Array.tabulate(n)(_ => 0)
+    var selected_lines: Array[Int] = Array.tabulate(n)(_ => 0)
     var solved: Boolean = false
     while (!solved){
         pos = generate_pos(pos)
@@ -41,7 +34,7 @@ object both extends App {
             }
         }
     }
-    println(product(selected_lines))
+    println(selected_lines.reduceLeft(_ * _))
     val end = timer.getCurrentThreadCpuTime()
     println(s"Took: ${end-start} nanoseconds, that's ${(end-start)/pow(10,9)} seconds")
 }
