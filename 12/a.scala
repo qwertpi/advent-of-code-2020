@@ -47,12 +47,11 @@ object a extends App {
 	val start = timer.getCurrentThreadCpuTime()
 
 	val origin: Position = new Position(0, 0, 'E')
-	val input: Array[String] = fromFile("input.txt").getLines.toArray
 
-	val final_pos: Position = input.foldLeft(origin)(update_position(_,_))
+	val final_pos: Position = fromFile("input.txt").getLines.foldLeft(origin)(update_position(_,_))
 	val answer: Int = calc_distance(final_pos, origin)
 	val end = timer.getCurrentThreadCpuTime()
-	
+
 	println(final_pos.x)
 	println(final_pos.y)
 	println(final_pos.direction)
